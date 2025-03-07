@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Logo from '@/public/Logo.png';
-
-export default function Home() {
+export default function PrivacyPolicy() {
   const [terms, setTerms] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     const fetchTerms = async () => {
       try {
-        const response = await fetch("http://ec2-3-108-217-153.ap-south-1.compute.amazonaws.com:3000/api/v1/admin/termAndConditions");
+        const response = await fetch("http://ec2-3-108-217-153.ap-south-1.compute.amazonaws.com:3000/api/v1/admin/privacyPolicy");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -52,11 +51,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <div className=' mt-[2rem] mx-auto w-[200px] h-[20px]' >
+     <div className=' mt-[2rem] mx-auto w-[200px] h-[20px]' >
         <Image width={300} height={200} alt='one7sports Logo' src={Logo}/>
 
      </div>
-      <h1 className=" mt-[70px] text-4xl font-bold text-center mb-8 tc">Terms and Conditions</h1>
+      <h1 className=" mt-[70px] text-4xl font-bold text-center mb-8 tc">Privacy Policy</h1>
       <div className="bg-white  p-[50px] rounded-lg shadow-lg max-w-3xl mx-auto">
         <div className="prose" dangerouslySetInnerHTML={{ __html: terms }} />
        
