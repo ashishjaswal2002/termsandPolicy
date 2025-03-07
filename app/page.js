@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     const fetchTerms = async () => {
       try {
-        const response = await fetch("http://ec2-3-108-217-153.ap-south-1.compute.amazonaws.com:3000/api/v1/admin/termAndConditions");
+        const response = await fetch("");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
